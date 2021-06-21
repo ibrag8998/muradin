@@ -8,6 +8,8 @@ class Product(models.Model):
     arrival_date = models.DateField("Дата прибытия")
     cost_price = models.PositiveIntegerField("Закупочная стоимость")
     retail_price = models.PositiveIntegerField("Розничная цена")
+    provider = models.ForeignKey('providers.Provider', on_delete=models.CASCADE, related_name='products',
+                                 verbose_name="Поставщик")
 
     class Meta:
         verbose_name = "товар на складе"
