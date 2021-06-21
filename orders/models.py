@@ -19,7 +19,7 @@ class Order(models.Model):
         return f"Заказ #{self.id}"
 
     def get_total_price(self):
-        return sum(order_product.product.retail_price * order_product.product.count for order_product in
+        return sum(order_product.product.retail_price * order_product.count for order_product in
                    self.order_products.all())
 
     get_total_price.short_description = "Сумма заказа"
