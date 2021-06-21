@@ -4,9 +4,6 @@ from django.db import models
 class Order(models.Model):
     client = models.ForeignKey('clients.Client', on_delete=models.SET_NULL, null=True, related_name='orders',
                                verbose_name="клиент")
-    # product = models.ForeignKey('products.Product', on_delete=models.SET_NULL, null=True, related_name='orders',
-    #                             verbose_name="товар")
-    # count = models.PositiveIntegerField("Количество товара", default=1)
     provider = models.ForeignKey('providers.Provider', on_delete=models.SET_NULL, null=True, related_name='orders',
                                  verbose_name="поставщик")
     created_at = models.DateTimeField("Дата и время заказа", auto_now_add=True)

@@ -6,7 +6,7 @@ class Product(models.Model):
     count = models.PositiveIntegerField("Количество товара на складе", default=1)
     category = models.CharField("Категория товара", blank=True, max_length=255)
     arrival_date = models.DateField("Дата прибытия")
-    cost_price = models.PositiveIntegerField("Себестоимость")
+    cost_price = models.PositiveIntegerField("Закупочная стоимость")
     retail_price = models.PositiveIntegerField("Розничная цена")
 
     class Meta:
